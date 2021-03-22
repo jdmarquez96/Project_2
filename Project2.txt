@@ -1,0 +1,82 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from Random import Random
+  
+#H0
+# mass of 1S = 9450 MeV
+#width of 1S = 54 KeV
+
+
+#H1
+#mass of 2S = 10023
+#width of 2S = 32 keV
+
+
+m0 = 9450 #MeV
+s0 = 54 #MeV
+
+m1 = 10023
+s1 = 25
+Nexp = 1000
+
+def h0(sigdetector):
+	mu = np.random.normal(m0, s0) #true measurements
+	x0 = np.random.normal(mu,sigdetector) #detector measurements
+	return x0 
+
+def h1(sigdetector):
+        mu1 = np.random.normal(m1, s1) 
+        x1 = np.random.normal(mu1,sigdetector) 
+        return x1
+
+
+
+
+
+x0list = []
+for i in range(1, Nexp):
+	y0 = h0(2000)
+	x0list.append(y0)
+
+
+x1list = []
+for i in range(1, Nexp): 
+        y1 = h1(200) 
+        x1list.append(y1)
+
+def bincontent(list)
+	for i in list):
+		for j in
+
+
+
+
+(n0, bins0, _) = plt.hist(x0list, bins= 50, density = True)
+(n1, bins1, _) = plt.hist(x1list, bins= 50, density = True)
+
+print(n0)
+LLR0 = []
+LLR = 0
+for i in range(1, N):
+	LLR = 0 
+        for m in range(1,Nmeas):
+		y = h0(200) 
+		p1 = hist1func(y)
+		p0 = hist0func(y)
+		LLR += log( p1/p0 )
+        LLR0.append(LLR)
+
+
+
+# write a function that , given m value you find p0 and p1
+# from h0 and h1
+
+
+# sample m values from H0
+   # then take m, get p0 and p1, calculate LLR = log( p1/p0 )
+   # repeat, LLRtot += LLR
+
+# sample m values from H1
+   # then take m, get p0 and p1, calculate LLR
+
+
